@@ -140,6 +140,7 @@ class TodoUi {
     this.todoLayoutContext = todoLayoutContext;
     this.updateTodo = updateTodo;
     this.generateUI();
+    this.mainContainer.append(this.todoContainer);
   }
   editTodo = (val) => {
     this.editUI = val;
@@ -149,7 +150,7 @@ class TodoUi {
   generateUI() {
     this.todoContainer.innerHTML = "";
     if (this.editUI) {
-      return new TodoEditUi(
+      new TodoEditUi(
         this.id,
         this.name,
         this.status,
@@ -161,7 +162,7 @@ class TodoUi {
         this.updateTodo
       );
     } else {
-      return new TodoViewUi(
+      const todoViewUi = new TodoViewUi(
         this.id,
         this.name,
         this.status,
@@ -170,6 +171,7 @@ class TodoUi {
         this.editTodo,
         this.todoUiContext
       );
+      this.todoContainer.appendChild(todoViewUi.todoContainer);
     }
   }
 }
@@ -288,7 +290,7 @@ class TodoViewUi {
     this.id = id;
     this.name = name;
     this.status = status;
-    this.todoContainer = todoContainer;
+    this.todoContainer = document.createElement("div");
     this.mainContainer = mainContainer;
     this.editTodo = editTodo;
     this.todoUiContext = todoUiContext;
@@ -312,10 +314,6 @@ class TodoViewUi {
     this.todoContainer.appendChild(todoName);
     this.todoContainer.appendChild(todoStatus);
     this.todoContainer.appendChild(button);
-    this.mainContainer.insertBefore(
-      this.todoContainer,
-      this.mainContainer.children[this.id]
-    );
   }
 }
 const todoStatus = ["Select Val", "PENDING", "DONE", "WONTDO"];
