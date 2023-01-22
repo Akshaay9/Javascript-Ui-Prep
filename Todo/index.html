@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h3>Add Todo</h3>
+    <input type="text" placeholder="Add Todo" id="todoInput" />
+
+    <select name="" id="todoSelect">
+      <option value="Select Val" disabled selected>Select Va</option>
+      <option value="PENDING">PENDING</option>
+      <option value="DONE">DONE</option>
+      <option value="WONTDO">WONTDO</option>
+    </select>
+    <button id="todoAddCta">Add Todod</button>
+
+    <!-- Seaech BY InPUT -->
+    <input type="text" placeholder="Search todo" id="searchTodo" />
+
+    <!-- SEARCH BY STATUS -->
+
+    <select name="" id="todoSelectSearch">
+      <option value="Select ALL" selected>Select ALL</option>
+      <option value="PENDING">PENDING</option>
+      <option value="DONE">DONE</option>
+      <option value="WONTDO">WONTDO</option>
+    </select>
+
+    <div class="todoContainer" id="todoContainer"></div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
