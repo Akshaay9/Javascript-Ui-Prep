@@ -73,8 +73,6 @@ class TodosLayout {
 
   //   Search By name
   searchTodoHandler = (name) => {
-    console.log(this.todoSearchStatus);
-    console.log(this.todoSearchText);
     let data = [...this.todoData];
 
     if (this.todoSearchText !== "") {
@@ -149,8 +147,8 @@ class TodoUi {
   };
 
   generateUI() {
+    this.todoContainer.innerHTML = "";
     if (this.editUI) {
-      this.todoContainer.innerHTML = "";
       return new TodoEditUi(
         this.id,
         this.name,
@@ -163,7 +161,6 @@ class TodoUi {
         this.updateTodo
       );
     } else {
-      this.todoContainer.innerHTML = "";
       return new TodoViewUi(
         this.id,
         this.name,
@@ -274,8 +271,6 @@ class TodoEditUi {
     saveEdit.addEventListener("click", () => {
       this.saveEditTodo();
     });
-
-    this.mainContainer.appendChild(this.todoContainer);
   }
 }
 
@@ -317,7 +312,10 @@ class TodoViewUi {
     this.todoContainer.appendChild(todoName);
     this.todoContainer.appendChild(todoStatus);
     this.todoContainer.appendChild(button);
-    this.mainContainer.appendChild(this.todoContainer);
+    this.mainContainer.insertBefore(
+      this.todoContainer,
+      this.mainContainer.children[this.id]
+    );
   }
 }
 const todoStatus = ["Select Val", "PENDING", "DONE", "WONTDO"];
