@@ -1,0 +1,23 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.rangeContainer {
+  width: 35rem;
+  height: 3rem;
+  border: 1px solid blueviolet;
+}
+.range {
+  height: 3rem;
+  background-color: blueviolet;
+  width: 0%;
+}
