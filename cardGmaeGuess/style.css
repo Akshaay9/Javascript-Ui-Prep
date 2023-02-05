@@ -1,0 +1,46 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cardContainer {
+  display: flex;
+}
+.card {
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid blueviolet;
+  margin: 1rem 2rem;
+  background-color: blueviolet;
+  cursor: pointer;
+}
+.grow {
+  transition: all 100ms ease-in-out;
+  transform: scale(1.2);
+}
+
+.shake {
+  animation-name: example;
+  animation-duration: 500ms;
+  animation-iteration-count: 2;
+}
+@keyframes example {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
