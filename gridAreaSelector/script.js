@@ -26,6 +26,8 @@ class GridPixelArt {
         const [row, column] = e.target.dataset.id.split("_");
         this.startPointRow = row;
         this.startPointColumn = column;
+        this.endPointRow = row;
+        this.endPointColumn = column;
         this.colorBoard();
       }
     });
@@ -34,14 +36,16 @@ class GridPixelArt {
     const className = e.target.className;
     if (this.startPointRow && this.startPointColumn && className === "column") {
       const [row, column] = e.target.dataset.id.split("_");
+
+      // max
       this.endPointRow = row;
       this.endPointColumn = column;
-      console.log({
-        startPountRow: this.startPointRow,
-        startPountCol: this.startPointRow,
-        endPointRow: this.endPointRow,
-        endPointColumn: this.endPointColumn,
-      });
+      // Start
+      this.startPointRow = Math.min(this.startPointRow, this.endPointRow);
+      this.startPointColumn = Math.min(
+        this.startPointColumn,
+        this.endPointColumn
+      );
       this.colorBoard();
     }
   }
