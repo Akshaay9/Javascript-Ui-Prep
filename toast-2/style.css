@@ -1,0 +1,39 @@
+.toast {
+    width: 10rem;
+    height: 40px;
+    border: 1px solid black;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
+  
+  .container {
+    position: absolute;
+    border: 1px solid red;
+    width: 10rem;
+  }
+  #topRight {
+    left: 5%;
+    top: 20%;
+  }
+  #topLeft {
+    right: 5%;
+    top: 20%;
+  }
+  #bottomRight {
+    bottom: 20%;
+    right: 5%;
+  }
+  
+  #bottomLeft {
+    bottom: 20%;
+    left: 5%;
+  }
+  
+  .success {
+    background: green;
+  }
+  .error {
+    background: red;
+  }
+  
