@@ -1,0 +1,30 @@
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .accodianContainer {
+    width: 30rem;
+    border: 1px solid gray;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .accordianHeader {
+    width: 100%;
+  }
+  
+  .accordianContent {
+    display: none;
+  }
+  .active {
+    display: block;
+  }
+  strong {
+    margin-right: auto;
+  }
+  
